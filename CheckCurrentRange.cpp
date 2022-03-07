@@ -9,6 +9,6 @@ TEST_CASE("Infers the battery charging current range and sample occurences in pa
   int CurrentSamples[] = {8,2,6,3,4,5,8,2,3,7,4,3,3};
   int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   ComputedRange = CalculateChargingCurrentRange(CurrentSamples,NoOfSamples);
-  result = strcmp(ComputedRange, "2-8 , 13");
+  result = strcmp(ComputedRange, "2 - 8, 13");
   REQUIRE(result == 0);
 }
