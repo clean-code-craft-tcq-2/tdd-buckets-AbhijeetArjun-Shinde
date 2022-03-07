@@ -3,6 +3,7 @@
 
 int getLowerLimitCurrent( int CurrentSamples[] , int no_of_samples ){
   int lowerLimit = CurrentSamples[0];
+  int i;
   for (i = 1 ; i < no_of_samples ; i++ ){
     if(lowerLimit > CurrentSamples[i]){
       lowerLimit = CurrentSamples[i];
@@ -14,6 +15,7 @@ int getLowerLimitCurrent( int CurrentSamples[] , int no_of_samples ){
 
 int getUpperLimitCurrent( int CurrentSamples[] , int no_of_samples ){
   int upperLimit = CurrentSamples[0];
+  int i;
   for (i = 1 ; i < no_of_samples ; i++ ){
     if(upperLimit < CurrentSamples[i]){
       upperLimit = CurrentSamples[i];
