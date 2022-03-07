@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void main(){
+char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   
+  return NULL;
   
 }
