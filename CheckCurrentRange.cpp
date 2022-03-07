@@ -6,7 +6,7 @@
 TEST_CASE("Infers the battery charging current range and sample occurences in particular range") {
   bool result;
   char *ComputedRange;
-  int CurrentSamples[] = {8,2,6,3,4,5,8,2,3,7,4,3,3};
+  int CurrentSamples[] = {5,2,6,3,4,5,8,2,3,7,4,3,3};
   int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   ComputedRange = CalculateChargingCurrentRange(CurrentSamples,NoOfSamples);
   result = strcmp(ComputedRange, "2 - 8, 13");
