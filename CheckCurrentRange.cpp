@@ -2,7 +2,7 @@
 
 #include "test/catch.hpp"
 #include <stdbool.h>
-
+#include "CheckBatteryChargingCurrentRange.h"
 TEST_CASE("Infers the battery charging current range and sample occurences in particular range") {
   bool result;
   char ComputedRange[];
