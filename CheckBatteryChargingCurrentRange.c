@@ -27,7 +27,8 @@ int getUpperLimitCurrent( int CurrentSamples[] , int no_of_samples ){
 char* CalculateChargingCurrentRange(int CurrentSamples[] , int no_of_samples){
   int LowerLimitCurrent = 0 ;
   int UpperLimitCurrent = 0 ;
-  char buffer[50];
+  char outputString[50];
+  char *buffer = outputString;
   LowerLimitCurrent = getLowerLimitCurrent(CurrentSamples , no_of_samples);
   UpperLimitCurrent = getUpperLimitCurrent(CurrentSamples , no_of_samples);
   sprintf(buffer , "%d - %d, %d", LowerLimitCurrent , UpperLimitCurrent , no_of_samples);
