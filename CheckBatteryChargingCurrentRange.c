@@ -2,20 +2,20 @@
 #include "CheckBatteryChargingCurrentRange.h"
 
 int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
-  static int SortedSamples[no_of_samples];
-  SortedSamples[0]= CurrentSamples[0];
-  int temp = 0;
-  for(int j = 0 ; j < no_of_samples-1 ; j++){
-  for (int i = 0 ; i < no_of_samples-1 ; i++ ){
-    SortedSamples[i]= CurrentSamples[i];
-    if(SortedSamples[i] > CurrentSamples[i+1]){
-      temp = SortedSamples[i];
-      SortedSamples[i] = CurrentSamples[i+1];
-      CurrentSamples[i+1] = temp; 
-    }
-  } 
-  }  
-  return SortedSamples;
+  int i, j, temp;
+  for (i = 0; i < (no_of_samples - 1); i++)
+    {
+      for (j = 0; j < no_of_samples - 1 - i; j++ )
+       {
+            if (CurrentSamples[j] > CurrentSamples[j+1])
+            {
+                temp = CurrentSamples[j+1];
+                CurrentSamples[j+1] = CurrentSamples[j];
+                CurrentSamples[j] = temp;
+            }
+        }
+    }  
+  return CurrentSamples;
 }
 
 int getUpperLimitCurrent( int CurrentSamples[] , int no_of_samples ){
