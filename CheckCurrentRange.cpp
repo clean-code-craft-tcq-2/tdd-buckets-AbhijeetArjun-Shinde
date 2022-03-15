@@ -21,7 +21,7 @@ TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
   bool result;
   char *ComputedRange;
   ComputedRange = getCurrentLimits(CurrentSamples,NoOfSamples);
-  char expectedOutput[] = "2 - 8, 10\n 12 - 13, 2\n 15 - 15, 11"; 
+  char expectedOutput[] = "2 - 8, 10\n12 - 13, 2\n15 - 15, 1"; 
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
 }
