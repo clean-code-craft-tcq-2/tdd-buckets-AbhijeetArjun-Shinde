@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "CheckBatteryChargingCurrentRange.h"
 
-int[] SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
+int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
   int SortedSamples[no_of_samples] = CurrentSamples;
   int temp = 0;
   for(int j = 0 ; j < no_of_samples-1 ; j++){
@@ -28,7 +28,7 @@ int getUpperLimitCurrent( int CurrentSamples[] , int no_of_samples ){
 }
 
 char* CalculateChargingCurrentRange(int CurrentSamples[] , int no_of_samples){
-  int SortedSamples[no_of_samples] = 0 ;
+  int *SortedSamples;
   int UpperLimitCurrent = 0 ;
   char outputString[50];
   char *buffer = outputString;
