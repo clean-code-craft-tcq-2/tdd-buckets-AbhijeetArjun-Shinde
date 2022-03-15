@@ -19,9 +19,9 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
   int *SortedSamples;
   SortedSamples = SortCurrentSamples(CurrentSamples,no_of_samples);
   
-  int upperLimit[no_of_samples/2] = 0;
-  int lowerLimit[no_of_samples/2] = 0;
-  int NoOfSamples[no_of_samples/2] = 0;
+  int upperLimit[no_of_samples/2] = {0};
+  int lowerLimit[no_of_samples/2] = {0};
+  int NoOfSamples[no_of_samples/2] = {0};
   
   int j = 0 ;
   lowerLimit[j] = *(SortedSamples);
