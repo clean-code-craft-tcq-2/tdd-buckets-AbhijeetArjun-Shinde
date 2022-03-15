@@ -31,7 +31,8 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
   NoOfSamples[j] = no_of_samples;
   
   for (int i = 0 ; i < no_of_samples ; i++ ){
-    if((*(CurrentSamples+i+1) - *(CurrentSamples+i)) >=2){
+    if((*(CurrentSamples+i+1) - *(CurrentSamples+i)) >=MAX_LIMIT_SEPRATION_BW_INTERVALS){
+      cntr++;
       upperLimit[j] = *(CurrentSamples+i);
       lowerLimit[j+1] = *(CurrentSamples+i+1);
       NoOfSamples[j] = cntr;
@@ -65,7 +66,7 @@ char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   int *SortedSamples;
   SortedSamples = SortCurrentSamples(currentsamples,no_of_samples);
   
-  getCurrentLimits(SortedSamples ,no_of_samples );
+  getCurrentLimits(SortedSamples ,no_of_samples);
   
   
 }
