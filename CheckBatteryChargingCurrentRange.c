@@ -30,7 +30,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
   NoOfSamples[j] = no_of_samples;
   
   for (int i = 0 ; i < no_of_samples ; i++ ){
-    
+    ++cntr;
     if((*(CurrentSamples+i+1) - *(CurrentSamples+i)) >=MAX_LIMIT_SEPRATION_BW_INTERVALS){
       upperLimit[j] = *(CurrentSamples+i);
       NoOfSamples[j] = cntr;
@@ -41,7 +41,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
       j++;
       cntr = 0;
     }
-    ++cntr;
+    
   } 
 
   char outputString1[50];
