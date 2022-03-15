@@ -3,17 +3,14 @@
 
 int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
   int i, j, temp;
-  for (i = 0; i < (no_of_samples - 1); i++)
-    {
-      for (j = 0; j < no_of_samples - 1 - i; j++ )
-       {
-            if (CurrentSamples[j] > CurrentSamples[j+1])
-            {
-                temp = CurrentSamples[j+1];
-                CurrentSamples[j+1] = CurrentSamples[j];
-                CurrentSamples[j] = temp;
-            }
+  for (i = 0; i < (no_of_samples - 1); i++){
+   for (j = 0; j < no_of_samples - 1 - i; j++ ){
+    if (CurrentSamples[j] > CurrentSamples[j+1]){
+        temp = CurrentSamples[j+1];
+        CurrentSamples[j+1] = CurrentSamples[j];
+        CurrentSamples[j] = temp;
         }
+      }
     }  
   return CurrentSamples;
 }
