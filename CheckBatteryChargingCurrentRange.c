@@ -33,7 +33,7 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
     if((*(SortedSamples+i+1) - *(SortedSamples+i)) >=2){
       upperLimit[j] = *(SortedSamples+i);
       lowerLimit[j+1] = *(SortedSamples+i+1);
-      NoOfSamples[j] = (j ==0 ? (i+1) : no_of_samples - (i+1));
+      NoOfSamples[j] = (j ==0 ? (i+1) : no_of_samples - (i));
       
       upperLimit[j+1] = *(SortedSamples+no_of_samples -1);
       NoOfSamples[j+1] = no_of_samples - NoOfSamples[j];
