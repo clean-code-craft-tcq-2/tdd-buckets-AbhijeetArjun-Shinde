@@ -16,7 +16,7 @@ TEST_CASE("Test for Sorting Current Samples") {
 }
 
 TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
-  int CurrentSamples[] = {5,2,6,3,4,5,8,2,3,7,4,3,3};
+  int CurrentSamples[] = {5,2,6,12,4,13,8,15,3,7,4,3,3};
   int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   bool result;
   char *ComputedRange;
