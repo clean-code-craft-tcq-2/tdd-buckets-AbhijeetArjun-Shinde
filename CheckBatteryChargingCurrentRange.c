@@ -16,7 +16,7 @@ int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
   return CurrentSamples;
 }
 
-char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples){
+char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_of_samples){
   char outputString1[50];
   char outputString2[50];
   char *buffer1 = outputString1;
@@ -60,7 +60,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
     
   } 
   char *OutputString;
-  OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples);
+  OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples);
   return OutputString;
   
 }
