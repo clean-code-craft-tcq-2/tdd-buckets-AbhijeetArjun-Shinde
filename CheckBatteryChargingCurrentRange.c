@@ -53,6 +53,6 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
       strcat(buffer1, buffer2);
     }
   }
- print("%s",buffer1);
+ printf("%s",buffer1);
  return buffer1 ;
 }
