@@ -16,7 +16,23 @@ int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
   return CurrentSamples;
 }
 
-
+char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples){
+  char outputString1[50];
+  char outputString2[50];
+  char *buffer1 = outputString1;
+  char *buffer2 = outputString2;
+  sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
+  
+  for(int k=1; k < no_of_samples/2 ; k++){
+    if(lowerLimit[k] !=0 && lowerLimit[k] <= 100){
+      sprintf(buffer2 , "%d - %d, %d", lowerLimit[k] , upperLimit[k] , NoOfSamples[k]);
+      strcat(buffer1,"\n");
+      strcat(buffer1,buffer2);
+    }
+  }
+ printf("%s",buffer1);
+ return buffer1 ;
+}
 
 char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
   int upperLimit[no_of_samples/2] = {0};
@@ -43,22 +59,10 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
     }
     
   } 
-
-  char outputString1[50];
-  char outputString2[50];
-  char *buffer1 = outputString1;
-  char *buffer2 = outputString2;
-  sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
+  char *OutputString;
+  OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples);
+  return OutputString;
   
-  for(int k=1; k < no_of_samples/2 ; k++){
-    if(lowerLimit[k] !=0 && lowerLimit[k] <= 100){
-      sprintf(buffer2 , "%d - %d, %d", lowerLimit[k] , upperLimit[k] , NoOfSamples[k]);
-      strcat(buffer1,"\n");
-      strcat(buffer1,buffer2);
-    }
-  }
- printf("%s",buffer1);
- return buffer1 ;
 }
 
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
