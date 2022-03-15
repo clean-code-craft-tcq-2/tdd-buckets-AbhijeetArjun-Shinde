@@ -6,7 +6,7 @@ int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
   SortedSamples[0]= CurrentSamples[0];
   int temp = 0;
   for(int j = 0 ; j < no_of_samples-1 ; j++){
-  for (int i = 0 ; i < no_of_samples ; i++ ){
+  for (int i = 0 ; i < no_of_samples-1 ; i++ ){
     SortedSamples[i]= CurrentSamples[i];
     if(SortedSamples[i] > CurrentSamples[i+1]){
       temp = SortedSamples[i];
