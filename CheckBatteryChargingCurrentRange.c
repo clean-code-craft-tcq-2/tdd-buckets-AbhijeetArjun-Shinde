@@ -40,25 +40,14 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
     }
   } 
 
-  char outputString[no_of_samples/2][50];
+  char outputString[50];
   char *buffer = outputString[0];
   sprintf(buffer , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
   
   for(int k=1; k < no_of_samples/2 ; k++){
     if(lowerLimit[k] !=0 ){
-      char *buffer = outputString[k];
       sprintf(buffer , "%d - %d, %d", lowerLimit[k] , upperLimit[k] , NoOfSamples[k]);
     }
   }
  return outputString ;
-}
-
-char* CalculateChargingCurrentRange(int CurrentSamples[] , int no_of_samples){
-  char outputString[50];
-  char *buffer = outputString;
-  SortedSamples = SortCurrentSamples(CurrentSamples , no_of_samples);
-  UpperLimitCurrent = getUpperLimitCurrent(CurrentSamples , no_of_samples);
-  sprintf(buffer , "%d - %d, %d", UpperLimitCurrent , UpperLimitCurrent , no_of_samples);
-  return buffer;
-  
 }
