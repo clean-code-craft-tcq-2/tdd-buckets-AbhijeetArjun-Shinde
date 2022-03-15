@@ -2,7 +2,7 @@
 #include "CheckBatteryChargingCurrentRange.h"
 
 int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
-  int SortedSamples[no_of_samples];
+  static int SortedSamples[no_of_samples];
   SortedSamples[0]= CurrentSamples[0];
   int temp = 0;
   for(int j = 0 ; j < no_of_samples-1 ; j++){
