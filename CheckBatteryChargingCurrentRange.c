@@ -19,13 +19,12 @@ int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
 
 
 char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
-
-  
   int upperLimit[no_of_samples/2] = {0};
   int lowerLimit[no_of_samples/2] = {0};
   int NoOfSamples[no_of_samples/2] = {0};
-  
   int j = 0, cntr=0 ;
+  
+  //AT beginning lower limit = first element of sorted array, upper limit= last element of sorted array, no of samples in this range = samples in given inpuy array
   lowerLimit[j] = *(CurrentSamples);
   upperLimit[j] = *(CurrentSamples + no_of_samples -1);
   NoOfSamples[j] = no_of_samples;
@@ -64,8 +63,8 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   int *SortedSamples;
   SortedSamples = SortCurrentSamples(currentsamples,no_of_samples);
-  
-  getCurrentLimits(SortedSamples ,no_of_samples);
-  
+  char *OutputString;
+  OutputString = getCurrentLimits(SortedSamples ,no_of_samples);
+  return OutputString;
   
 }
