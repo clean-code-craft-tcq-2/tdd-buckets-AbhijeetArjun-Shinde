@@ -50,7 +50,7 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
   for(int k=1; k < no_of_samples/2 ; k++){
     if(lowerLimit[k] !=0 && lowerLimit[k] <= 100){
       sprintf(buffer2 , "%d - %d, %d", lowerLimit[k] , upperLimit[k] , NoOfSamples[k]);
-      strcat(buffer1," ");
+      strcat(buffer1,"\n ");
       strcat(buffer1,buffer2);
     }
   }
