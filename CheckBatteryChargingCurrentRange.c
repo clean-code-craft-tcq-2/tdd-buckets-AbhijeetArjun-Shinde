@@ -18,26 +18,25 @@ int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
 
 
 
-char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
-  int *SortedSamples;
-  SortedSamples = SortCurrentSamples(CurrentSamples,no_of_samples);
+char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
+
   
   int upperLimit[no_of_samples/2] = {0};
   int lowerLimit[no_of_samples/2] = {0};
   int NoOfSamples[no_of_samples/2] = {0};
   
   int j = 0, cntr=1 ;
-  lowerLimit[j] = *(SortedSamples);
-  upperLimit[j] = *(SortedSamples + no_of_samples -1);
+  lowerLimit[j] = *(CurrentSamples);
+  upperLimit[j] = *(CurrentSamples + no_of_samples -1);
   NoOfSamples[j] = no_of_samples;
   
   for (int i = 0 ; i < no_of_samples ; i++ ){
-    if((*(SortedSamples+i+1) - *(SortedSamples+i)) >=2){
-      upperLimit[j] = *(SortedSamples+i);
-      lowerLimit[j+1] = *(SortedSamples+i+1);
+    if((*(CurrentSamples+i+1) - *(CurrentSamples+i)) >=2){
+      upperLimit[j] = *(CurrentSamples+i);
+      lowerLimit[j+1] = *(CurrentSamples+i+1);
       NoOfSamples[j] = cntr;
       
-      upperLimit[j+1] = *(SortedSamples+no_of_samples -1);
+      upperLimit[j+1] = *(CurrentSamples+no_of_samples -1);
       j++;
       cntr =1;
     }
@@ -60,4 +59,13 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
   }
  printf("%s",buffer1);
  return buffer1 ;
+}
+
+char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
+  int *SortedSamples;
+  SortedSamples = SortCurrentSamples(CurrentSamples,no_of_samples);
+  
+  getCurrentLimits(SortedSamples ,no_of_samples );
+  
+  
 }
