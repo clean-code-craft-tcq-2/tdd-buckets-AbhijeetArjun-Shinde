@@ -49,14 +49,14 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
     ++cntr;
     if((*(CurrentSamples+i+1) - *(CurrentSamples+i)) >=MAX_LIMIT_SEPRATION_BW_INTERVALS){
       upperLimit[j] = *(CurrentSamples+i);
-      NoOfSamples[j] = cntr;
+      
       
       lowerLimit[j+1] = *(CurrentSamples+i+1);
       upperLimit[j+1] = *(CurrentSamples+no_of_samples -1);
       j++;
       cntr = 0;
     }
-    
+   NoOfSamples[j] = cntr; 
   } 
   char *OutputString;
   OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples);
