@@ -12,7 +12,7 @@ TEST_CASE("Test for Sorting Current Samples") {
   int *SortedSamples;
   SortedSamples = SortCurrentSamples(CurrentSamples,NoOfSamples);
   for(int i =0; i < NoOfSamples ; i++){
-    REQUIRE(SortedSamples[i] == ExpectedOutput[i]);
+    REQUIRE( *(SortedSamples+i) == ExpectedOutput[i]);
   }
   
 }
