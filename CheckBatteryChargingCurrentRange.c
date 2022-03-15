@@ -45,7 +45,7 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
   char outputString2[50];
   char *buffer1 = outputString1;
   char *buffer2 = outputString2;
-  sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
+  sprintf(buffer1 , "%d - %d, %d\n", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
   
   for(int k=1; k < no_of_samples/2 ; k++){
     if(lowerLimit[k] !=0 ){
