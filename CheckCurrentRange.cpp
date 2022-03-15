@@ -16,12 +16,12 @@ TEST_CASE("Test for Sorting Current Samples") {
 }
 
 TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
-  int CurrentSamples[] = {5,2,6,12,4,13,8,17,3,7,4,3,16,3};
+  int CurrentSamples[] = {5,2,6,12,4,13,8,17,3,7,4,3,16,3,22,23};
   int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   bool result;
   char *ComputedRange;
   ComputedRange = CalculateChargingCurrentRange(CurrentSamples,NoOfSamples);
-  char expectedOutput[] = "2 - 8, 10\n12 - 13, 2\n16 - 17, 2"; 
+  char expectedOutput[] = "2 - 8, 10\n12 - 13, 2\n16 - 17, 2\n22 - 23,2"; 
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
 }
