@@ -36,7 +36,7 @@ char* getCurrentLimits( int CurrentSamples[] , int no_of_samples ){
       NoOfSamples[j] = i+1;
       
       upperLimit[j+1] = *(SortedSamples+no_of_samples -1);
-      NoOfSamples[j+1] = no_of_samples - (i+1);
+      NoOfSamples[j+1] = no_of_samples - NoOfSamples[j];
       j++;
     }
   } 
