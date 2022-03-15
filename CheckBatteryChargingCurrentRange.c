@@ -38,7 +38,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
   int upperLimit[no_of_samples/2] = {0};
   int lowerLimit[no_of_samples/2] = {0};
   int NoOfSamples[no_of_samples/2] = {0};
-  int j = 0, cntr=0 ;
+  int j = 0, cntr=1 ;
   
   //AT beginning lower limit = first element of sorted array, upper limit= last element of sorted array, no of samples in this range = samples in given inpuy array
   lowerLimit[j] = *(CurrentSamples);
@@ -54,7 +54,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
       lowerLimit[j+1] = *(CurrentSamples+i+1);
       upperLimit[j+1] = *(CurrentSamples+no_of_samples -1);
       j++;
-      cntr = 0;
+      cntr = 1;
     }
    NoOfSamples[j] = cntr; 
   } 
