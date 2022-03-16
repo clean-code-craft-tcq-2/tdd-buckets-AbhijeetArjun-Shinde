@@ -18,22 +18,17 @@ int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
 
 char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_of_samples){
   char outputString1[50];
-  char outputString2[50];
   char *buffer1 = outputString1;
-  char *buffer2 = outputString2;
   sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
- 
- printf("%s",buffer1);
- return buffer1 ;
+  printf("%s",buffer1);
+  return buffer1 ;
 }
 
 char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
   int upperLimit[no_of_samples/2] = {0};
   int lowerLimit[no_of_samples/2] = {0};
   int NoOfSamples[no_of_samples/2] = {0};
-  int j = 0, cntr=0 ;
   
-  //AT beginning lower limit = first element of sorted array, upper limit= last element of sorted array, no of samples in this range = samples in given inpuy array
   lowerLimit[j] = *(CurrentSamples);
   upperLimit[j] = *(CurrentSamples + no_of_samples -1);
   NoOfSamples[j] = no_of_samples;
