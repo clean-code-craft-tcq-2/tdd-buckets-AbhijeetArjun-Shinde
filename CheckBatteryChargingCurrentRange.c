@@ -22,14 +22,7 @@ char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_o
   char *buffer1 = outputString1;
   char *buffer2 = outputString2;
   sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
-  
-  for(int k=1; k < no_of_samples/2 ; k++){
-    if(lowerLimit[k] !=0 && lowerLimit[k] <= 100){
-      sprintf(buffer2 , "%d - %d, %d", lowerLimit[k] , upperLimit[k] , NoOfSamples[k]);
-      strcat(buffer1,"\n");
-      strcat(buffer1,buffer2);
-    }
-  }
+ 
  printf("%s",buffer1);
  return buffer1 ;
 }
@@ -45,20 +38,6 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
   upperLimit[j] = *(CurrentSamples + no_of_samples -1);
   NoOfSamples[j] = no_of_samples;
   
-  for (int i = 0 ; i < no_of_samples ; i++ ){
-    cntr++;
-    NoOfSamples[j] = cntr;
-    if((*(CurrentSamples+i+1) - *(CurrentSamples+i)) >=MAX_LIMIT_SEPRATION_BW_INTERVALS){
-      upperLimit[j] = *(CurrentSamples+i);
-      
-      
-      lowerLimit[j+1] = *(CurrentSamples+i+1);
-      upperLimit[j+1] = *(CurrentSamples+no_of_samples -1);
-      j++;
-      cntr = 0;
-    }
- 
-  } 
   char *OutputString;
   OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples);
   return OutputString;
