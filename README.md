@@ -53,6 +53,6 @@ Start Test-driven approach
 1. Refactor any assumptions, continue to pass this test. Do not add any code without a corresponding test.
 
 
-###Assumptions:
+### Assumptions:
 1. Input array of current samples may be sorted or may not be.
 2. Input array of current samples is not an empty array
