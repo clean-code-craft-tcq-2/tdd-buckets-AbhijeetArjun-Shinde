@@ -74,7 +74,15 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   int *SortedSamples;
   //SortedSamples = qsort(currentsamples, no_of_samples, sizeof(int), CompareFunc);
+   for (int h =0; h < no_of_samples ; h++){
+     printf("%d \n ", currentsamples[h]);
+  }
+   
+   printf("after sorting\n");
   qsort(currentsamples, no_of_samples, sizeof(int), CompareFunc);
+  for (int h =0; h < no_of_samples ; h++){
+     printf("%d \n ", currentsamples[h]);
+  }
   char *OutputString;
   OutputString = getCurrentLimits(SortedSamples ,no_of_samples);
   return OutputString;
