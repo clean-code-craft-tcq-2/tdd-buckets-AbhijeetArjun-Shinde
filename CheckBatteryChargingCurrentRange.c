@@ -64,7 +64,7 @@ char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   }
   char outputStr[50];
   char *OutputString = outputStr;
-  getCurrentLimits(currentsamples ,no_of_samples,OutputString);
+  getCurrentLimits(ConvertedOutput ,no_of_samples,OutputString);
   return OutputString;
   
 }
