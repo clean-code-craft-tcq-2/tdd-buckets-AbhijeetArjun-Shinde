@@ -5,18 +5,14 @@ int ConvertToAmp(int CurrentSample){
   float ConvertedValue = (float( 10 * CurrentSample) / 4094);
   int temp = ConvertedValue*10;
   int tempCheck = ( temp % 10);
-  int roundNum;
   if(tempCheck>=5)
   {
-    roundNum = ConvertedValue;
-    roundNum++;
+    return ++(int(ConvertedValue));
   }
   else
   {
-    roundNum = ConvertedValue;
+    return (int(ConvertedValue));
   }
-  
-  return roundNum;
 }
 
 
