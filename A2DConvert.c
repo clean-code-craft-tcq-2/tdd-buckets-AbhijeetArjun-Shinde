@@ -3,11 +3,8 @@
 
 int ConvertToAmp(int CurrentSample){
   float ConvertedValue = (float( 10 * CurrentSample) / 4094);
-  printf("converted value : %f \n",ConvertedValue);
   int temp = ConvertedValue*10;
-  printf("temp value1 : %f \n",temp);
   int tempCheck = ( temp % 10);
-  printf("remiander : %f \n",tempCheck);
   int roundNum;
   if(tempCheck>=5)
   {
