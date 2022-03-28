@@ -21,7 +21,7 @@ void CheckConvertSensedCurrentToAmp1(int *CurrentSamples, int NoOfSamples, int *
   
   for(int i = 0; i < NoOfSamples;i++){
     if(*(CurrentSamples+i) <= 1022 && *(CurrentSamples+i) >= 0){
-      *(ConvertedSamples+i) = ConvertToAmp(*(CurrentSamples+i));
+      *(ConvertedSamples+i) = ConvertToAmp1(*(CurrentSamples+i));
     }
     else{
      printf("Invalid Input\n");
