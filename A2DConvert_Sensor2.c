@@ -3,7 +3,7 @@
 #include "A2DConvert.h"
 
 int ConvertToAmp1(int CurrentSample){
-  float ConvertedValue = abs(float( 30 * CurrentSample) / 1022) - 15;
+  float ConvertedValue = abs((float( 30 * CurrentSample) / 1022) - 15);
   int temp = ConvertedValue*10;
   int tempCheck = ( temp % 10);
   if(tempCheck>=5)
