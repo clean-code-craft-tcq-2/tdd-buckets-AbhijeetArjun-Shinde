@@ -1,6 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "CheckBatteryChargingCurrentRange.h"
 #include <string.h>
+
+
+int CompareFunc (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
+}
 
 int* SortCurrentSamples( int CurrentSamples[] , int no_of_samples ){
   int i, j, temp;
@@ -67,7 +73,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples ){
 
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   int *SortedSamples;
-  SortedSamples = SortCurrentSamples(currentsamples,no_of_samples);
+  SortedSamples = qsort(currentsamples, no_of_samples, sizeof(int), CompareFunc);
   char *OutputString;
   OutputString = getCurrentLimits(SortedSamples ,no_of_samples);
   return OutputString;
