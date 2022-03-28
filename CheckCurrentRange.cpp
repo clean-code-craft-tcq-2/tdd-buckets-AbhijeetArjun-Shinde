@@ -23,7 +23,7 @@ TEST_CASE("Test for Checking sensed current values within range") {
   bool result=0;
   int ConvertedOutput[NoOfSamples];
   int *ConvertedOutputPtr=ConvertedOutput ;
-  ConvertedOutputPtr = CheckConvertSensedCurrentToAmp(SensedCurrentSamples,NoOfSamples,ConvertedOutputPtr);
+  CheckConvertSensedCurrentToAmp(SensedCurrentSamples,NoOfSamples,ConvertedOutputPtr);
   int expectedOutput[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
   for(int i =0; i < NoOfSamples;i++){
     if(*(ConvertedOutputPtr+i) != expectedOutput[i])
