@@ -14,3 +14,19 @@ TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
 }
+
+
+TEST_CASE("Test for Checking sensed current values within range") {
+  int SensedCurrentSamples[] =  {0,1000,1250,1750,2300,4000,4094,3200,3500,5000,4095,3094};
+  int NoOfSamples = sizeof(SensedCurrentSamples)/sizeof(SensedCurrentSamples[0]);
+  bool result=0;
+  int ConvertedOutput[NoOfSamples];
+  int *ConvertedOutput=ConvertedOutput ;
+  ConvertedOutput = CheckConvertSensedCurrentToAmp(CurrentSamples,NoOfSamples,ConvertedOutput);
+  int expectedOutput[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
+  for(int i =0; i < NoOfSamples;i++){
+    if(ConvertedOutput[i] != expectedOutput[i])
+      result=1
+  }
+  REQUIRE(result == 0); 
+}
