@@ -5,7 +5,7 @@
 #include "CheckBatteryChargingCurrentRange.h"
 
 TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
-  int CurrentSamples[] =  {5,2,10,3,13,5,8,2,14,7,15,3,17,18,19,20,17,18};
+  int CurrentSamples[] =  {2,3,4,5,2,3,4,7,8,9,8,7,5,6,7,12,14,15,11,12};
   int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   bool result;
   char *ComputedRange;
