@@ -14,7 +14,7 @@
   char expectedOutput[] = "2 - 9, 15\n11 - 12, 3\n14 - 15, 2"; 
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
-}*/
+}
 
 
 TEST_CASE("Test for Checking sensed current values within range- Sensor 1 ") {
@@ -42,7 +42,7 @@ TEST_CASE("Test for Checking sensed current values within range and for Checking
   ComputedRange = CalculateChargingCurrentRange(SensedCurrentSamples,NoOfSamples);
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
-}
+}*/
 
 
 TEST_CASE("Test for Checking sensed current values within range- Sensor 2 ") {
