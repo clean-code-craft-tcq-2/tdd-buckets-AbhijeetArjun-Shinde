@@ -26,7 +26,7 @@ TEST_CASE("Test for Checking sensed current values within range") {
   int expectedOutput[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
   for(int i =0; i < NoOfSamples;i++){
     if(*(ConvertedOutputPtr+i) != expectedOutput[i])
-      result=1
+      result=1;
   }
   REQUIRE(result == 0); 
 }
