@@ -1,17 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "A2DConvert.h"
 
 int ConvertToAmp1(int CurrentSample){
-  float ConvertedValue = (float( 30 * CurrentSample) / 1022) - 15;
+  float ConvertedValue = abs(float( 30 * CurrentSample) / 1022) - 15;
   int temp = ConvertedValue*10;
   int tempCheck = ( temp % 10);
   if(tempCheck>=5)
   {
-    return abs((int(++ConvertedValue)));
+    return int(++ConvertedValue);
   }
   else
   {
-    return abs((int(ConvertedValue)));
+    return int(ConvertedValue);
   }
 }
 
