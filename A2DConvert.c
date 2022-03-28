@@ -3,6 +3,7 @@
 
 int ConvertToAmp(int CurrentSample){
   float ConvertedValue = (( 10 * CurrentSample) / 4094);
+  printf("converted value : %f \n",ConvertedValue);
   int temp = ConvertedValue*10;
   int tempCheck = ( temp % 10);
   printf("remiander : %f \n",tempCheck);
