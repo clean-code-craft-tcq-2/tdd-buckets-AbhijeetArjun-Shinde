@@ -39,7 +39,7 @@ TEST_CASE("Test for Checking sensed current values within range and for Checking
   bool result=0;
   char expectedOutput[] = "0 - 0, 3\n2 - 4, 3\n6 - 6, 1\n8 - 10,5"; 
   char *ComputedRange;
-  ComputedRange = CalculateChargingCurrentRange(CurrentSamples,NoOfSamples);
+  ComputedRange = CalculateChargingCurrentRange(SensedCurrentSamples,NoOfSamples);
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
 }
