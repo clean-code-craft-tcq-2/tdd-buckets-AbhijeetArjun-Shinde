@@ -55,13 +55,7 @@ char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   int ConvertedOutput[no_of_samples];
   int *ConvertedOutputPtr=ConvertedOutput ;
   CheckConvertSensedCurrentToAmp(currentsamples,no_of_samples,ConvertedOutputPtr);
-  for (int i=0;i<no_of_samples;i++){
-     printf("Converted samples:\n %d \n",*(ConvertedOutputPtr+i));
-  }
   qsort(ConvertedOutput, no_of_samples, sizeof(int), CompareFunc);
-  for (int i=0;i<no_of_samples;i++){
-     printf("Sorted samples:\n %d \n",*(ConvertedOutputPtr+i));
-  }
   char outputStr[50];
   char *OutputString = outputStr;
   getCurrentLimits(ConvertedOutput ,no_of_samples,OutputString);
