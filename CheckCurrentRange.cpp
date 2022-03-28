@@ -3,6 +3,7 @@
 #include "test/catch.hpp"
 #include <stdbool.h>
 #include "CheckBatteryChargingCurrentRange.h"
+#include "A2DConvert.h"
 
 TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
   int CurrentSamples[] =  {2,3,4,5,2,3,4,7,8,9,8,7,5,6,7,12,14,15,11,12};
