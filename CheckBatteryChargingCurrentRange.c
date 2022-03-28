@@ -24,7 +24,7 @@ char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_o
  return buffer1 ;
 }
 
-char* getCurrentLimits( int *CurrentSamples , int no_of_samples){
+char* getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputString ){
   int upperLimit[no_of_samples/2] = {0};
   int lowerLimit[no_of_samples/2] = {0};
   int NoOfSamples[no_of_samples/2] = {0};
@@ -48,8 +48,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples){
     }
   } 
    
-  char outputStr[50];
-  char *OutputString = outputStr;
+
   OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples,OutputString);
   return OutputString;
 }
@@ -57,8 +56,9 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples){
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   qsort(currentsamples, no_of_samples, sizeof(int), CompareFunc);
    
-  char *OutputString;
-  OutputString = getCurrentLimits(currentsamples ,no_of_samples);
+  char outputStr[50];
+  char *OutputString = outputStr;
+  OutputString = getCurrentLimits(currentsamples ,no_of_samples,OutputString);
   return OutputString;
   
 }
