@@ -14,7 +14,7 @@
   char expectedOutput[] = "2 - 9, 15\n11 - 12, 3\n14 - 15, 2"; 
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
-}
+}*/
 
 
 TEST_CASE("Test for Checking sensed current values within range- Sensor 1 ") {
@@ -26,7 +26,6 @@ TEST_CASE("Test for Checking sensed current values within range- Sensor 1 ") {
   CheckConvertSensedCurrentToAmp(SensedCurrentSamples1,NoOfSamples1,ConvertedOutputPtr);
   int expectedOutput1[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
   for(int i =0; i < NoOfSamples1;i++){
-    printf("%d\n", *(ConvertedOutputPtr+i));
     if(*(ConvertedOutputPtr+i) != expectedOutput1[i])
       result=1;
   }
@@ -42,7 +41,7 @@ TEST_CASE("Test for Checking sensed current values within range and for Checking
   ComputedRange = CalculateChargingCurrentRange(SensedCurrentSamples,NoOfSamples);
   result = strcmp(ComputedRange, expectedOutput);
   REQUIRE(result == 0); 
-}*/
+}
 
 
 TEST_CASE("Test for Checking sensed current values within range- Sensor 2 ") {
@@ -54,7 +53,6 @@ TEST_CASE("Test for Checking sensed current values within range- Sensor 2 ") {
   CheckConvertSensedCurrentToAmp1(SensedCurrentSamples2,NoOfSamples2,ConvertedOutputPtr1);
   int expectedOutput2[] = {15,12,9,5,3,2,0,0,0,0,3,5,8,12,13,15,0,0}; 
   for(int i =0; i < NoOfSamples2;i++){
-    printf("%d\n", *(ConvertedOutputPtr1+i));
     if(*(ConvertedOutputPtr1+i) != expectedOutput2[i])
       result=1;
   }
