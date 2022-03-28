@@ -7,7 +7,7 @@ int ConvertToAmp(int CurrentSample){
   int tempCheck = ( temp % 10);
   if(tempCheck>=5)
   {
-    return ++(int(ConvertedValue));
+    return (int(++ConvertedValue));
   }
   else
   {
