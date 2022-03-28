@@ -32,3 +32,14 @@ TEST_CASE("Test for Checking sensed current values within range") {
   }
   REQUIRE(result == 0); 
 }
+
+TEST_CASE("Test for Checking sensed current values within range and for Checking Upper and Lower Limits of Current Samples") {
+  int SensedCurrentSamples[] =  {0,1000,1250,1750,2300,4000,4094,3200,3500,5000,4095,3094};
+  int NoOfSamples = sizeof(SensedCurrentSamples)/sizeof(SensedCurrentSamples[0]);
+  bool result=0;
+  char expectedOutput[] = "0 - 0, 3\n2 - 4, 3\n6 - 6, 1\n8 - 10,5"; 
+  char *ComputedRange;
+  ComputedRange = CalculateChargingCurrentRange(CurrentSamples,NoOfSamples);
+  result = strcmp(ComputedRange, expectedOutput);
+  REQUIRE(result == 0); 
+}
