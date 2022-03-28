@@ -2,7 +2,7 @@
 #include "A2DConvert.h"
 
 int ConvertToAmp(int CurrentSample){
-  float ConvertedValue = (( 10 * CurrentSample) / 4094);
+  float ConvertedValue = (float( 10 * CurrentSample) / 4094);
   printf("converted value : %f \n",ConvertedValue);
   int temp = ConvertedValue*10;
   printf("temp value1 : %f \n",temp);
