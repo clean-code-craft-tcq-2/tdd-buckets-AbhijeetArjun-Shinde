@@ -5,7 +5,7 @@ int ConvertToAmp(int CurrentSample){
   float ConvertedValue = (( 10 * CurrentSample) / 4094);
   int temp = ConvertedValue*10;
   float tempCheck = ( temp % 10);
-  
+  printf("remiander : %f \n",tempCheck);
   int roundNum;
   if(tempCheck>=5)
   {
