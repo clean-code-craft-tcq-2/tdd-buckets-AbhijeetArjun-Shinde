@@ -56,3 +56,8 @@ Start Test-driven approach
 ### Assumptions:
 1. Input array of current samples may be sorted or may not be.
 2. Input array of current samples is not an empty array
+
+
+### Assumptions About the Sensor and A2D:
+1. if the sensed current value is within correct range, then it will be converted to Amp.
+2. if the sensed current value is outside range, then value is treated as 0Amp.
