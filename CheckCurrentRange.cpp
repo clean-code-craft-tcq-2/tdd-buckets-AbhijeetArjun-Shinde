@@ -18,16 +18,16 @@
 
 
 TEST_CASE("Test for Checking sensed current values within range") {
-  int SensedCurrentSamples[] =  {0,1000,1250,1750,2300,4000,4094,3200,3500,5000,4095,3094};
-  int NoOfSamples = sizeof(SensedCurrentSamples)/sizeof(SensedCurrentSamples[0]);
+  int SensedCurrentSamples1[] =  {0,1000,1250,1750,2300,4000,4094,3200,3500,5000,4095,3094};
+  int NoOfSamples1 = sizeof(SensedCurrentSamples1)/sizeof(SensedCurrentSamples1[0]);
   bool result=0;
-  int ConvertedOutput[NoOfSamples];
+  int ConvertedOutput[NoOfSamples1];
   int *ConvertedOutputPtr=ConvertedOutput ;
-  CheckConvertSensedCurrentToAmp(SensedCurrentSamples,NoOfSamples,ConvertedOutputPtr);
-  int expectedOutput[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
-  for(int i =0; i < NoOfSamples;i++){
+  CheckConvertSensedCurrentToAmp(SensedCurrentSamples1,NoOfSamples1,ConvertedOutputPtr);
+  int expectedOutput1[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
+  for(int i =0; i < NoOfSamples1;i++){
     printf("%d\n", *(ConvertedOutputPtr+i));
-    if(*(ConvertedOutputPtr+i) != expectedOutput[i])
+    if(*(ConvertedOutputPtr+i) != expectedOutput1[i])
       result=1;
   }
   REQUIRE(result == 0); 
