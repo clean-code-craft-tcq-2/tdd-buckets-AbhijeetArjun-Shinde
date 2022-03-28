@@ -25,9 +25,9 @@ char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_o
 }
 
 char* getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputString ){
-  int upperLimit[no_of_samples/2] = {0};
-  int lowerLimit[no_of_samples/2] = {0};
-  int NoOfSamples[no_of_samples/2] = {0};
+  int upperLimit[no_of_samples] = {0};
+  int lowerLimit[no_of_samples] = {0};
+  int NoOfSamples[no_of_samples] = {0};
   int j = 0, cntr=0 ;
   
   //AT beginning lower limit = first element of sorted array, upper limit= last element of sorted array, no of samples in this range = samples in given input array
