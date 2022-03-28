@@ -2,7 +2,20 @@
 #include "A2DConvert.h"
 
 int ConvertToAmp(int CurrentSample){
-  return (int)((10 * CurrentSample)/4094);
+  float temp = CurrentSample*10;
+  int tempCheck = temp%10;
+  int roundNum;
+  if(tempCheck>=5)
+  {
+    roundNum = CurrentSample;
+    roundNum++;
+  }
+  else
+  {
+    roundNum = CurrentSample;
+  }
+  
+  return roundNum;
 }
 
 
