@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "CheckBatteryChargingCurrentRange.h"
 #include <string.h>
-
+#include "A2DConvert.h"
 
 int CompareFunc (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
@@ -52,7 +52,10 @@ void getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputStrin
 }
 
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
-  qsort(currentsamples, no_of_samples, sizeof(int), CompareFunc);
+  int ConvertedOutput[no_of_samples];
+  int *ConvertedOutputPtr=ConvertedOutput ;
+  CheckConvertSensedCurrentToAmp(currentsamples,no_of_samples,ConvertedOutputPtr);
+  qsort(ConvertedOutput, no_of_samples, sizeof(int), CompareFunc);
    
   char outputStr[50];
   char *OutputString = outputStr;
