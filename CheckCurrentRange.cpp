@@ -4,20 +4,7 @@
 #include <stdbool.h>
 #include "CheckBatteryChargingCurrentRange.h"
 
-
-TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples TC01") {
-  int CurrentSamples[] =  {5,2,6,3,4,5,8,2,3,7,4,3,3};
-  int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
-  bool result;
-  char *ComputedRange;
-  ComputedRange = CalculateChargingCurrentRange(CurrentSamples,NoOfSamples);
-  char expectedOutput[] = "2 - 8, 13"; 
-  result = strcmp(ComputedRange, expectedOutput);
-  REQUIRE(result == 0); 
-}
-
-
-TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples TC02") {
+TEST_CASE("Test for Checking Upper and Lower Limits of Current Samples") {
   int CurrentSamples[] =  {5,2,10,3,13,5,8,2,14,7,15,3,17,18,19,20};
   int NoOfSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   bool result;
