@@ -8,7 +8,7 @@ int CompareFunc (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
 }
 
-char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_of_samples,char *buffer1){
+void OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_of_samples,char *buffer1){
   char outputString2[50];
   char *buffer2 = outputString2;
   sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
@@ -21,10 +21,9 @@ char* OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_o
     }
   }
  printf("%s",buffer1);
- return buffer1 ;
 }
 
-char* getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputString ){
+void getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputString ){
   int upperLimit[no_of_samples] = {0};
   int lowerLimit[no_of_samples] = {0};
   int NoOfSamples[no_of_samples] = {0};
@@ -49,8 +48,7 @@ char* getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputStri
   } 
    
 
-  OutputString = OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples,OutputString);
-  return OutputString;
+  OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples,OutputString);
 }
 
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
@@ -58,7 +56,7 @@ char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
    
   char outputStr[50];
   char *OutputString = outputStr;
-  OutputString = getCurrentLimits(currentsamples ,no_of_samples,OutputString);
+  getCurrentLimits(currentsamples ,no_of_samples,OutputString);
   return OutputString;
   
 }
