@@ -3,7 +3,7 @@
 
 int ConvertToAmp(int CurrentSample){
   float temp = CurrentSample*10;
-  int tempCheck = temp%10;
+  int tempCheck = ( temp % 10);
   int roundNum;
   if(tempCheck>=5)
   {
