@@ -16,7 +16,7 @@ int ConvertToAmp_Sensor1(int CurrentSample){
 }
 
 
-void CheckAndConvertSensedCurrentToAmpSensor1(int *CurrentSamples, int NoOfSamples, int *ConvertedSamples){
+void CheckAndConvertSensedCurrentToAmp_Sensor1(int *CurrentSamples, int NoOfSamples, int *ConvertedSamples){
   
   for(int i = 0; i < NoOfSamples;i++){
     if(*(CurrentSamples+i) <= 4094 && *(CurrentSamples+i) >= 0){
