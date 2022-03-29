@@ -40,8 +40,8 @@ Range, Readings
 
 Establish quality parameters: 
 
-- What is the maximum complexity (CCN) per function? _enter CCN and create corresponding yml in the `.github/workflows` folder
-- How many lines of duplicate code will you tolerate? _enter the number of lines and create corresponding yml in the `.github/workflows` folder
+- What is the maximum complexity (CCN) per function? CCN=4
+- How many lines of duplicate code will you tolerate? lines=3
 - Ensure 100% line and branch coverage at every step. Include the coverage yml in the workflows.
 
 Adapt/adopt/extend the `yml` files from one of your previous workflow folders.
@@ -51,3 +51,26 @@ Start Test-driven approach
 1. Write the smallest possible failing test: give input `4,5`. assert output to be `4-5, 2`.
 1. Write the minimum amount of code that'll make it pass.
 1. Refactor any assumptions, continue to pass this test. Do not add any code without a corresponding test.
+
+
+### Assumptions:
+1. Input array of current samples may be sorted or may not be.
+2. Input array of current samples is not an empty array
+
+
+### Assumptions About the Sensor and A2D:
+1. if the sensed current value is within correct range, then it will be converted to Amp.
+2. if the sensed current value is outside range, then value is treated as 0Amp.
+
+### Approach
+1. Input --> Sequence of Charging sessions from either Sensor type 1 or Sensor type2.
+2. Validating the sample sequence and converting to Ampere based on sensor type.
+3. Sorting the sample sequence.
+4. Slicing the sequence into ranges.
+5. Counting the no. of readings in each range.
+6. Printing the ranges and no. of readings.
+
+
+
+
+
