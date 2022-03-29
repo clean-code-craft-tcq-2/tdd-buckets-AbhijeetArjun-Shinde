@@ -61,3 +61,11 @@ Start Test-driven approach
 ### Assumptions About the Sensor and A2D:
 1. if the sensed current value is within correct range, then it will be converted to Amp.
 2. if the sensed current value is outside range, then value is treated as 0Amp.
+
+### Approach
+Input --> Sequence of Charging sessions from either Sensor type 1 or Sensor type2
+Validating the sample sequence and converting to Ampere based on sensor type
+Sorting the sample sequence
+Slicing the sequence into ranges
+Counting the no. of readings in each range
+Printing the ranges and no. of readings
