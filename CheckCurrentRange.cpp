@@ -23,7 +23,7 @@ TEST_CASE("Test for Checking sensed current values within range- Sensor 1 ") {
   bool result=0;
   int ConvertedOutput[NoOfSamples1];
   int *ConvertedOutputPtr=ConvertedOutput ;
-  CheckConvertSensedCurrentToAmp(SensedCurrentSamples1,NoOfSamples1,ConvertedOutputPtr);
+  CheckAndConvertSensedCurrentToAmp_Sensor1(SensedCurrentSamples1,NoOfSamples1,ConvertedOutputPtr);
   int expectedOutput1[] = {0,2,3,4,6,10,10,8,9,0,0,8}; 
   for(int i =0; i < NoOfSamples1;i++){
     if(*(ConvertedOutputPtr+i) != expectedOutput1[i])
@@ -50,7 +50,7 @@ TEST_CASE("Test for Checking sensed current values within range- Sensor 2 ") {
   bool result=0;
   int ConvertedOutput1[NoOfSamples2];
   int *ConvertedOutputPtr1=ConvertedOutput1 ;
-  CheckConvertSensedCurrentToAmp1(SensedCurrentSamples2,NoOfSamples2,ConvertedOutputPtr1);
+  CheckAndConvertSensedCurrentToAmp_Sensor2(SensedCurrentSamples2,NoOfSamples2,ConvertedOutputPtr1);
   int expectedOutput2[] = {15,12,9,5,3,2,0,0,0,0,3,5,8,12,13,15,0,0}; 
   for(int i =0; i < NoOfSamples2;i++){
     if(*(ConvertedOutputPtr1+i) != expectedOutput2[i])
