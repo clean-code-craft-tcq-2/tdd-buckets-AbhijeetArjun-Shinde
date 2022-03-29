@@ -63,9 +63,14 @@ Start Test-driven approach
 2. if the sensed current value is outside range, then value is treated as 0Amp.
 
 ### Approach
-Input --> Sequence of Charging sessions from either Sensor type 1 or Sensor type2.
-Validating the sample sequence and converting to Ampere based on sensor type.
-Sorting the sample sequence.
-Slicing the sequence into ranges.
-Counting the no. of readings in each range.
-Printing the ranges and no. of readings.
+1. Input --> Sequence of Charging sessions from either Sensor type 1 or Sensor type2.
+2. Validating the sample sequence and converting to Ampere based on sensor type.
+3. Sorting the sample sequence.
+4. Slicing the sequence into ranges.
+5. Counting the no. of readings in each range.
+6. Printing the ranges and no. of readings.
+
+
+
+
+
