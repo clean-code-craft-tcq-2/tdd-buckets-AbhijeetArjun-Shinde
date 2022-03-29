@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "A2DConvert.h"
 
-int ConvertToAmp(int CurrentSample){
+int ConvertToAmp_Sensor1(int CurrentSample){
   float ConvertedValue = (float( 10 * CurrentSample) / 4094);
   int temp = ConvertedValue*10;
   int tempCheck = ( temp % 10);
@@ -16,11 +16,11 @@ int ConvertToAmp(int CurrentSample){
 }
 
 
-void CheckConvertSensedCurrentToAmp(int *CurrentSamples, int NoOfSamples, int *ConvertedSamples){
+void CheckAndConvertSensedCurrentToAmpSensor1(int *CurrentSamples, int NoOfSamples, int *ConvertedSamples){
   
   for(int i = 0; i < NoOfSamples;i++){
     if(*(CurrentSamples+i) <= 4094 && *(CurrentSamples+i) >= 0){
-      *(ConvertedSamples+i) = ConvertToAmp(*(CurrentSamples+i));
+      *(ConvertedSamples+i) = ConvertToAmp_Sensor1(*(CurrentSamples+i));
     }
     else{
      printf("Invalid Input\n");
