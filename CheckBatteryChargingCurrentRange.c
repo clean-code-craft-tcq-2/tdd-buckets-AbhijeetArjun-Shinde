@@ -13,7 +13,7 @@ void OutputFormatter(int* lowerLimit,int* upperLimit, int* NoOfSamples,int no_of
   char *buffer2 = outputString2;
   sprintf(buffer1 , "%d - %d, %d", lowerLimit[0] , upperLimit[0] , NoOfSamples[0]);
   
-  for(int k=1; k < no_of_samples/2 ; k++){
+  for(int k=1; k < no_of_samples ; k++){
     if(lowerLimit[k] !=0 && lowerLimit[k] <= 100){
       sprintf(buffer2 , "%d - %d, %d", lowerLimit[k] , upperLimit[k] , NoOfSamples[k]);
       strcat(buffer1,"\n");
@@ -46,18 +46,22 @@ void getCurrentLimits( int *CurrentSamples , int no_of_samples,char *OutputStrin
       cntr = 0;
     }
   } 
-   
-
   OutputFormatter(lowerLimit,upperLimit,NoOfSamples,no_of_samples,OutputString);
 }
 
 char* CalculateChargingCurrentRange(int currentsamples[] , int no_of_samples){
   int ConvertedOutput[no_of_samples];
   int *ConvertedOutputPtr=ConvertedOutput ;
-  CheckConvertSensedCurrentToAmp(currentsamples,no_of_samples,ConvertedOutputPtr);
-  qsort(ConvertedOutput, no_of_samples, sizeof(int), CompareFunc);
   char outputStr[50];
-  char *OutputString = outputStr;
+  char *OutputString = outputStr; 
+   
+  if(AVAILABLE_SENSOR_TYPE == 1)
+  CheckAndConvertSensedCurrentToAmp_Sensor1(currentsamples,no_of_samples,ConvertedOutputPtr);
+  else
+  CheckAndConvertSensedCurrentToAmp_Sensor2(currentsamples,no_of_samples,ConvertedOutputPtr);
+  
+  qsort(ConvertedOutput, no_of_samples, sizeof(int), CompareFunc);
+
   getCurrentLimits(ConvertedOutput ,no_of_samples,OutputString);
   return OutputString;
   
